@@ -48,7 +48,7 @@ function Navegacao({ name, ...props }) {
               <Modal.Title>PCD - Lei Federal 12.933/2013</Modal.Title>
             </Modal.Header>
             <Modal.Body>PCD - Pessoas com Deficiência (PCD) e/ou Portadores de Necessidades Especiais (PNE) (Lei Federal 12.933/2013):
-              Possuem o benefício da meia-entrada o portador com deficiência (PCD) e/ou portadores de necessidades especiais e o seu acompanhante. Para a compra, retirada e acesso ao evento, é obrigatório apresentar o documento de PCD ou laudo médico e o Documento de Identidade original (RG) ou cópia autenticada, (o acompanhante poderá adquirir os dois ingressos, desde que o mesmo esteja com todos comprovantes em mãos). Caso não seja comprovado o direito a meia-entrada tipo (PCD) o evento/organizador poderá cobrar a diferença do preço da inteira do lote vigente no acesso ao evento.!</Modal.Body>
+              Possuem o benefício da meia-entrada o portador com deficiência (PCD) e/ou portadores de necessidades especiais e o seu acompanhante. Para a compra, retirada e acesso ao evento, é obrigatório apresentar o documento de PCD ou laudo médico e o Documento de Identidade original (RG) ou cópia autenticada, (o acompanhante poderá adquirir os dois ingressos, desde que o mesmo esteja com todos comprovantes em mãos). Caso não seja comprovado o direito a meia-entrada tipo (PCD) o evento/organizador poderá cobrar a diferença do preço da inteira do lote vigente no acesso ao evento.</Modal.Body>
           </Modal>
 
           <Button variant="primary" onClick={handleShow} className='botaocadeira' size="sm">
@@ -63,13 +63,13 @@ function Navegacao({ name, ...props }) {
               <Nav.Link href="/contato" className='linknav'>Contato</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/cadastro" className='linknav'>Cadastro</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
               <Nav.Link href="/listaUsuarios" className='linknav'>Lista de Usuários</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/loginadm" className='linknav'>Seu Perfil Adm</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+            <Nav.Link href="/cadastroClientes" className='linknav'>Cadastre-se</Nav.Link>
             </Nav.Item>
           </Nav>
         </Container>

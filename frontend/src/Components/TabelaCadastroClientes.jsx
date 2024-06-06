@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const TabelaCadastro = () => {
+
+const TabelaCadastroClientes = () => {
   const [cadastros, setCadastros] = useState([]);
 
   useEffect(() => {
@@ -29,6 +30,7 @@ const TabelaCadastro = () => {
     }
   };
 
+  nome, sobrenome, dataNascimento, genero, email, senha, telefone, cpf, cep, cidade
   return (
     <div>
       <table border={2} cellPadding={5} cellSpacing={5}>
@@ -36,25 +38,34 @@ const TabelaCadastro = () => {
           <tr>
             <th>ID</th>
             <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Data de Nascimento</th>
+            <th>Gênero</th>
             <th>Email</th>
-            <th>CPF</th>
-            <th>Endereço</th>
-            <th>Telefone</th>
             <th>Senha</th>
-            <th>Ação</th>
+            <th>Telefone</th>
+            <th>CPF</th>
+            <th>CEP</th>
+            <th>Cidade</th>
             {/* Adicione mais colunas, se necessário */}
           </tr>
         </thead>
+
+        nome, sobrenome, dataNascimento, genero, email, senha, telefone, cpf, cep, cidade
         <tbody>
           {cadastros.map((cadastro) => (
             <tr key={cadastro.idCadastro}>
               <td>{cadastro.idCadastro}</td>
               <td>{cadastro.nome}</td>
+              <td>{cadastro.sobrenome}</td>
+              <td>{cadastro.dataNascimento}</td>
+              <td>{cadastro.genero}</td>
               <td>{cadastro.email}</td>
-              <td>{cadastro.cpf}</td>
-              <td>{cadastro.endereco}</td>
-              <td>{cadastro.telefone}</td>
               <td>{cadastro.senha}</td>
+              <td>{cadastro.telefone}</td>
+              <td>{cadastro.cpf}</td>
+              <td>{cadastro.cep}</td>
+              <td>{cadastro.cidade}</td>
               <td>
                 <button
                   variant="danger"
@@ -72,4 +83,4 @@ const TabelaCadastro = () => {
   );
 };
 
-export default TabelaCadastro;
+export default TabelaCadastroClientes;

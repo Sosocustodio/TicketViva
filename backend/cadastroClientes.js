@@ -3,7 +3,7 @@ const connection = require('./db');
 const router = express.Router();
 
 // Rota para listar todos os registros
-router.get('/cadastro', (req, res) => {
+router.get('/cadastroClientes', (req, res) => {
   connection.query('SELECT * FROM cadastroClientes', (err, results) => {
     if (err) {
       console.error('Erro ao buscar os registros:', err);
@@ -15,9 +15,9 @@ router.get('/cadastro', (req, res) => {
 });
 
 // Rota para buscar um registro específico pelo ID
-router.get('http://localhost:3001/cadastro/:id', (req, res) => {
+router.get('http://localhost:3000/cadastroClientes/:id', (req, res) => {
   const { id } = req.params;
-  connection.query('SELECT * FROM cadastro WHERE id = ?', [id], (err, results) => {
+  connection.query('SELECT * FROM cadastroClientes WHERE idCadastroClientes = ?', [id], (err, results) => {
     if (err) {
       console.error('Erro ao buscar o registro:', err);
       res.status(500).json({ error: 'Erro ao buscar o registro' });
@@ -32,10 +32,10 @@ router.get('http://localhost:3001/cadastro/:id', (req, res) => {
 });
 
 // Rota para criar um novo registro
-router.post('http://localhost:3001/cadastro', (req, res) => {
-  const { nome, sobrenome,  email, telefone, cpf, cep, cidade } = req.body;
-  connection.query('INSERT INTO cadastroFornecedores (nome, sobrenome, dataNascimento, genero, email, telefone, cpf, cep, cidade) VALUES (?, ?, ?, ?, ?, ?, ?)',
-    [nome, sobrenome, email, telefone, cpf], (err, result) => {
+router.post('http://localhost:3000/cadastroClientes', (req, res) => {
+  const { nome, sobrenome, dataNascimento, genero, email, senha, telefone, cpf, cep, cidade } = req.body;
+  connection.query('INSERT INTO cadastroFornecedores (nome, sobrenome, dataNascimento, genero, email, senha, telefone, cpf, cep, cidade) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+    [nome, sobrenome, dataNascimento, genero, email, senha, telefone, cpf, cep, cidade], (err, result) => {
       if (err) {
         console.error('Erro ao criar o registro:', err);
         res.status(500).json({ error: 'Erro ao criar o registro' });
@@ -46,11 +46,11 @@ router.post('http://localhost:3001/cadastro', (req, res) => {
 });
 
 // Rota para atualizar um registro existente pelo ID
-router.put('http://localhost:3001//cadastro/:id', (req, res) => {
+router.put('http://localhost:3000//cadastroClientes/:id', (req, res) => {
   const { id } = req.params;
-  const {nome, sobrenome, email, telefone, cpf } = req.body;
-  connection.query('UPDATE cadastros SET nome = ?, sobrenome = ?,  email = ?, telefone = ?, cpf = ?,  WHERE id = ?',
-    [nome, sobrenome, email, telefone, cpf], (err, result) => {
+  const { nome, sobrenome, dataNascimento, genero, email, senha, telefone, cpf, cep, cidade } = req.body;
+  connection.query('UPDATE cadastroFornecedores SET nome = ?, sobrenome = ?, dataNascimento = ?, genero = ?, email = ?, senha = ?, telefone = ?, cpf = ?, cep = ? cidade = ? WHERE id = ?',
+    [nome, sobrenome, dataNascimento, genero, email, senha, telefone, cpf, cep, cidade], (err, result) => {
       if (err) {
         console.error('Erro ao atualizar o registro:', err);
         res.status(500).json({ error: 'Erro ao atualizar o registro' });
@@ -61,9 +61,9 @@ router.put('http://localhost:3001//cadastro/:id', (req, res) => {
 });
 
 // Rota para excluir um registro pelo ID
-router.delete('http://localhost:3001//cadastro/:id', (req, res) => {
+router.delete('http://localhost:3000//cadastroClientes/:id', (req, res) => {
   const { id } = req.params;
-  connection.query('DELETE FROM cadastro WHERE id = ?', [id], (err, result) => {
+  connection.query('DELETE FROM cadastroClientes WHERE idCadastroClientes = ?', [id], (err, result) => {
     if (err) {
       console.error('Erro ao excluir o registro:', err);
       res.status(500).json({ error: 'Erro ao excluir o registro' });
