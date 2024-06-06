@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const routes = require('./routes'); // Importa as rotas do backend
 const vendas = require("./vendas");
+const loginadm = require("./loginadm");
 
 
 const app = express();

@@ -11,7 +11,7 @@ const TabelaCadastroVenda = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3001/gerenciamento");
+        const { data } = await axios.get("http://localhost:3002/gerenciamento");
         setVendas(data);
       } catch (error) {
         console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
@@ -23,9 +23,9 @@ const TabelaCadastroVenda = () => {
 
   const handleExcluirUsuario = async (idVenda) => {
     try {
-      await axios.delete(`http://localhost:3001/gerenciamento/${idVenda}`);
+      await axios.delete(`http://localhost:3002/gerenciamento/${idVenda}`);
       // Atualiza a lista de cadastros após a exclusão
-      const { data } = await axios.get("http://localhost:3001/gerenciamento");
+      const { data } = await axios.get("http://localhost:3002/gerenciamento");
       setVendas(data);
       console.log("Usuário excluído com sucesso!");
     } catch (error) {
