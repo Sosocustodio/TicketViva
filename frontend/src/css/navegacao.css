@@ -1,0 +1,45 @@
+/* navbar1 */
+.logo {
+    width: 100px;
+}
+
+.iconsnav {
+   color: #066699;
+    width: 50px;
+    height: 25px;
+    border-radius:h 10px;
+}
+
+.botaocadeira {
+    width: 65px;
+    height: 35px;
+    border-radius: 30px;
+    background-color: aliceblue;
+}
+
+.botaocadeira:hover {
+    background-color: aliceblue;
+}
+
+.pesquisabotao {
+    background-color: #aedd2b;
+}
+
+.pesquisabotao:hover {
+    background-color: #aedd2b;
+}
+
+.linknav:hover {
+    color: #066699;
+}
+
+/* navbar2 */
+
+.navbar2 {
+    background-color: #aedd2b;
+
+}
+
+.links {
+    margin-left: 70px;
+}
