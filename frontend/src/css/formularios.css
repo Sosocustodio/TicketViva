@@ -1,0 +1,74 @@
+.imgVenda {
+  width: 90%;
+}
+
+.centralizar {
+  display: block;
+  text-align: -webkit-center;
+}
+.form-container.vendas {
+  max-width: 800px !important;
+  border: 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    margin-left: 20%;
+}
+.Asterisco {
+  color: red;
+}
+
+
+/* FORMS */
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-top: 1cm;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="number"],
+.form-container input[type="password"],
+.form-container button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-container button {
+  background-color:#aedd2b;
+  color: white;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  color: #066699;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container input[type="number"]:focus {
+  outline: none;
+  border-color:#455fa0;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Open Sans';
+}
+
+/* PÁGINA VENDAS */
+
+.graficoVendas{
+  width: 40%;
+  margin-top: 30px;
+}

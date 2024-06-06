@@ -4,7 +4,7 @@ const connection = require('./db');
 const router = express.Router();
 
 // Rota para listar todos os registros
-router.get('/vendas', (req, res) => {
+router.get('/gerenciamento', (req, res) => {
   connection.query('SELECT * FROM vendas', (err, results) => {
     if (err) {
       console.error('Erro ao buscar os registros:', err);
@@ -16,7 +16,7 @@ router.get('/vendas', (req, res) => {
 });
 
 // Rota para buscar um registro específico pelo ID
-router.get('/vendas/:id', (req, res) => {
+router.get('/gerenciamento/:id', (req, res) => {
   const { id } = req.params;
   connection.query('SELECT * FROM vendas WHERE id = ?', [id], (err, results) => {
     if (err) {
@@ -33,9 +33,9 @@ router.get('/vendas/:id', (req, res) => {
 });
 
 // Rota para criar um novo registro
-router.post('/vendas', (req, res) => {
+router.post('/gerenciamento', (req, res) => {
   const { cliente, descVenda, prodVenda, qtdProduto, precoVenda, dataVenda, statusVenda } = req.body;
-  connection.query('INSERT INTO vendas (cliente, descVenda, prodVenda, qtdProduto, precoVenda, dataVenda, statusVenda) VALUES (?, ?, ?, ?, ?, ?, ?)', 
+  connection.query('INSERT INTO vendas (cliente, descVenda, prodVenda, qtd, precoVenda, dataVenda, statusVenda) VALUES (?, ?, ?, ?, ?, ?, ?)', 
     [cliente, descVenda, prodVenda, qtdProduto, precoVenda, dataVenda, statusVenda], (err, result) => {
     if (err) {
       console.error('Erro ao criar o registro:', err);
@@ -47,10 +47,10 @@ router.post('/vendas', (req, res) => {
 });
 
 // Rota para atualizar um registro existente pelo ID
-router.put('/vendas/:id', (req, res) => {
+router.put('/gerenciamento/:id', (req, res) => {
   const { id } = req.params;
   const { cliente, descVenda, prodVenda, qtdProduto, precoVenda, dataVenda, statusVenda} = req.body;
-  connection.query('UPDATE vendas SET cliente = ?, descVenda = ?, prodVenda = ?, qtdProduto = ?, precoVenda = ?, dataVenda = ?, statusVenda = ? WHERE id = ?', 
+  connection.query('UPDATE vendas SET cliente = ?, descVenda = ?, prodVenda = ?, qtd = ?, precoVenda = ?, dataVenda = ?, statusVenda = ? WHERE id = ?', 
     [cliente, descVenda, prodVenda, qtdProduto, precoVenda, dataVenda, statusVenda, id ], (err, result) => {
     if (err) {
       console.error('Erro ao atualizar o registro:', err);
@@ -62,9 +62,9 @@ router.put('/vendas/:id', (req, res) => {
 });
 
 // Rota para excluir um registro pelo ID
-router.delete('/vendas/:id', (req, res) => {
+router.delete('/gerenciamento/:id', (req, res) => {
   const { id } = req.params;
-  connection.query('DELETE FROM vendas WHERE idTransacao = ?', [id], (err, result) => {
+  connection.query('DELETE FROM vendas WHERE idVenda = ?', [id], (err, result) => {
     if (err) {
       console.error('Erro ao excluir o registro:', err);
       res.status(500).json({ error: 'Erro ao excluir o registro' });

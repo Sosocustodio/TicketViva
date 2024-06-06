@@ -6,7 +6,7 @@ const router = express.Router();
 router.post("/loginadm", (req, res) => {
   const { cpf, senha } = req.body;
   connection.query(
-    "SELECT * FROM cadastro WHERE cpf = ? AND senha = ?",
+    "SELECT * FROM cadastroClientes WHERE cpf = ? AND senha = ?",
     [cpf, senha],
     (error, results) => {
       if (error) {

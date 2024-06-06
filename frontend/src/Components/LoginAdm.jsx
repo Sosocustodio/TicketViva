@@ -1,12 +1,12 @@
 // LoginFuncionarios.jsx
 import React, { useState } from "react";
 import axios from "axios";
+import "../css/formularios.css";
 
 
 const LoginAdm = () => {
   const [cpf, setCpf] = useState("");
   const [senha, setSenha] = useState("");
-  const [dadosFuncionario, setDadosFuncionario] = useState(null);
   const [mensagem, setMensagem] = useState("");
 
   const handleSubmit = async (e) => {
@@ -16,11 +16,9 @@ const LoginAdm = () => {
         cpf,
         senha,
       });
-      setDadosFuncionario(response.data);
       setMensagem("");
     } catch (error) {
       console.error("Erro ao fazer login:", error);
-      setDadosFuncionario(null);
       setMensagem(
         "Credenciais inválidas. Por favor, verifique seu CPF e senha."
       );
@@ -29,10 +27,10 @@ const LoginAdm = () => {
 
   return (
     <div>
-      <h2 className="estoqueTitulo centralizar my-4">
+      <h2 className="centralizar my-4">
         Faça seu login:
       </h2>
-      <form className="form-container produtos my-3" onSubmit={handleSubmit}>
+      <form className="form-container vendas my-3" onSubmit={handleSubmit}>
         <label htmlFor="cpf">CPF:</label>
         <input
           type="text"
@@ -54,25 +52,6 @@ const LoginAdm = () => {
         <button type="submit">Entrar</button>
       </form>
       {mensagem && <p>{mensagem}</p>}
-      {dadosFuncionario && (
-        <div  className="tabelaLogin">
-          <h3 className="estoqueTitulo centralizar my-4">
-            Dados do Funcionário:
-            </h3>
-          <div className="dadosLogin">
-            <div className="dados">
-              <p className="dadosTabela">Nome: {dadosFuncionario.nome}</p>
-              <p className="dadosTabela">Email: {dadosFuncionario.email}</p>
-              <p className="dadosTabela">Telefone: {dadosFuncionario.telefone}</p>
-            </div>
-            <div className="dados">
-              <p className="dadosTabela">Endereço: {dadosFuncionario.endereco}</p>
-              <p className="dadosTabela">Salário: R$ {dadosFuncionario.salario}</p>
-              <p className="dadosTabela">Cargo: {dadosFuncionario.cargo}</p>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
