@@ -8,6 +8,7 @@ const dbConfig = {
   database: 'ticketviva' // Nome do banco de dados
 };
 
+
 // Criação da conexão com o banco de dados
 const connection = mysql.createConnection(dbConfig);
 
