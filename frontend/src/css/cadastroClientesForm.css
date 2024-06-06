@@ -1,0 +1,6 @@
+.form-wrapper {
+    background-color: #ffffff; /* Cor de fundo do formulário */
+    padding: 20px; /* Adiciona um espaçamento interno ao redor do formulário */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
+    border-radius: 10px; /* Adiciona uma borda arredondada */
+  }
